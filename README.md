@@ -10,6 +10,22 @@ TREC Microblog 2011-2014 Datasets. More details in:
 - url.txt: URLs contained in the tweet, one line per tweet
 - id.txt: the originial run using Query Likelihood (QL), which also provides the query id, tweet id, etc.
 
+IDF (inverse document frequency) files:
+- word n-grams: https://drive.google.com/open?id=0B1EhxQ7GBJdsZTVmcFVMcDY1RWM
+- character n-grams: https://drive.google.com/file/d/0B1EhxQ7GBJdsbXdROGZQYzV5cFU/view
+
+To use it:
+```
+$ word_weights = json.load(open("collection_word_idf.json" "r"))
+$ word_weights['unigram']['hello']
+$ word_weights['bigram']['hello world']
+
+$ char_weights = json.load(open("collection_char_idf.json" "r"))
+$ char_weights['3gram']['hel']
+$ char_weights['6gram']['hello ']
+$ char_weights['9gram']['hello wor']
+```
+
 ## TREC_EVAL
 ```
 $ tar -xvzf trec_eval.8.1.tar.gz
